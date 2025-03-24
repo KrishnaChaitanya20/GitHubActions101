@@ -1,9 +1,7 @@
 name: Store and Upload a File as an Artifact
 
-on:
-  push:
-    branches:
-      - main
+on: 
+  workflow_dispatch:
 
 jobs:
   create-and-upload-artifact:
