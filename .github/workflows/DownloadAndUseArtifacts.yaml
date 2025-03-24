@@ -30,4 +30,3 @@ jobs:
 
       - name: Print Artifact File Content
         run: cat artifacts/artifact.txt
-`
