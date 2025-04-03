@@ -34,10 +34,12 @@ jobs:
         run: |
           echo "Environment Variable: $MY_ENV_VAR"
       
-      - name: Print Repository Variables # Uses the variables defined in the repository settings and environment field of the job
+      - name: Print Repository Variables
         run: |
-          echo "Repository Variable: ${{ vars.MY_VAR }}"
+          echo "Repository Variable in Test Environment: ${{ vars.MY_VAR }}"
+          echo "Repository Variable: ${{ vars.REPO_VAR }}"
       
-      - name: Print Secrets # Uses the secrets defined in the repository settings and environment field of the job
+      - name: Print Secrets
         run: |
-          echo "Secret: ${{ secrets.MY_SECRET }}"
+          echo "Repository Secret in Test Environment: ${{ secrets.MY_SECRET }}"
+          echo "Repository Secret: ${{ secrets.REPO_SECRET }}"
