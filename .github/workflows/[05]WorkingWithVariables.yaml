@@ -17,8 +17,16 @@ jobs:
           echo "Event Name: ${{ github.event_name }}"
           echo "Ref: ${{ github.ref }}"
           echo "SHA: ${{ github.sha }}"
-          echo "Head Ref: ${{ github.head_ref }}"
-          echo "Base Ref: ${{ github.base_ref }}"
+          echo "Head Ref: ${{ github.head_ref }}" # populated for workflows triggered by pull request events
+          echo "Base Ref: ${{ github.base_ref }}" # populated for workflows triggered by pull request events
+          echo "Job: ${{ github.job }}"
+          echo "Run Number: ${{ github.run_number }}"
+          echo "Run Attempt: ${{ github.run_attempt }}"
+          echo "Repository Owner: ${{ github.event.repository.owner.login }}"
+          echo "Repository Name: ${{ github.event.repository.name }}"
+          echo "Repository Full Name: ${{ github.event.repository.full_name }}"
+          echo "Repository URL: ${{ github.event.repository.html_url }}"
+          echo "Repository Description: ${{ github.event.repository.description }}"
       
       - name: Print Environment Variables
         env:
