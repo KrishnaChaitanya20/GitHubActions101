@@ -1,0 +1,24 @@
+name: Matrix Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  list-files:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v4
+
+      - name: List Directories (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: ls -a
+
+      - name: List Directories (Windows)
+        if: runner.os == 'Windows'
+        run: dir

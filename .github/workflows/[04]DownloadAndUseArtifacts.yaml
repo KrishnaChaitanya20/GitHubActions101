@@ -1,9 +1,7 @@
 name: Downloading and Using the Artifact
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   create-and-upload-artifact:
