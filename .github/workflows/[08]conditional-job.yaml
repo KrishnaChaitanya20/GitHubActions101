@@ -7,8 +7,10 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Echo
-      run: echo "hi"
+    # - name: Echo
+    #   run: echo "hi" 
+    - name: Simulating Failure
+      run: exit 1  # This forces the job to fail
 
   conditional-job:
     runs-on: ubuntu-latest
